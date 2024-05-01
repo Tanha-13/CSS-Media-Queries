@@ -4,10 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Media Queries</title>
+
+    <style>
+        /* @media not|only mediaType and (expressions){
+            css code;
+        } */
+        body{
+            background-color: #313131;
+            color: beige;
+        }
+
+        .boxes{
+            display: flex;
+        }
+        .box{
+            width: 200px;
+            height:200px;
+            background-color: steelblue;
+            padding: 3px;
+            margin: 10px;
+        }
+
+        @media only screen and (max-width:450px){
+            body{
+                background-color: rgb(73, 19, 19);
+            }
+            .boxes{
+                flex-direction: column;
+            }
+        }
+        /* width vs height: if the width is larger than the height, the screen is landscape. one value is portrait*/
+        @media screen and (orientation: landscape) {
+            body{
+                background-color: burlywood;
+            }
+        }
+    </style>
 </head>
 <body>
     <div>
         Hey I am red body guy!
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
     </div>
 </body>
 </html>
